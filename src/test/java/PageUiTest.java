@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +14,8 @@ class PageUiTest {
 
     @BeforeAll
     static void setUp() {
-        WebDriverManager.chromedriver().setup();
+        if (SystemUtils.IS_OS_WINDOWS)
+            System.setProperty("webdriver.chrome.driver", "artifacts/chromedriver_linux88");
     }
 
     @AfterEach
