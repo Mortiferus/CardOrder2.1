@@ -15,7 +15,8 @@ class PageUiTest {
     @BeforeAll
     static void setUp() {
         if (SystemUtils.IS_OS_WINDOWS)
-            System.setProperty("webdriver.chrome.driver", "artifacts/chromedriver_linux64");
+            System.setProperty("webdriver.chrome.driver", "artifacts/chromedriver_win88.exe");
+        else System.setProperty("webdriver.chrome.driver", "artifacts/chromedriver_linux88");
     }
 
     @AfterEach
