@@ -16,4 +16,5 @@ install:
   - sudo apt-get install google-chrome-stable > /dev/null
 
 build_script:
+  - chmod +x gradlew
   - ./gradlew test --info
